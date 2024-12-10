@@ -27,7 +27,8 @@ class ProfileController extends Controller
         $secure = false;
         $httpOnly = true;
         $response = response($data, $status_code);
-        $response->cookie('sarwars_cookie', $access_token, $minutes, $path, $domain, $secure, $httpOnly);
+        $response->cookie('sarwars_cookie');
+        $response->cookie($access_token, $minutes, $path, $domain, $secure, $httpOnly);
         return $response;
 
     }
