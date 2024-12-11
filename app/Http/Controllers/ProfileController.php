@@ -20,14 +20,15 @@ class ProfileController extends Controller
             'age' => $age,
         ];
         $status_code = 200;
-        $access_token = "123-XYZ";
+        $token_name = 'access_token';
+        $access_token_value = "123-XYZ";
         $minutes = 1;
         $path = '/';
         $domain = $_SERVER['SERVER_NAME'];
         $secure = false;
         $httpOnly = true;
         $response = response($data, $status_code);
-        $response->cookie('access_token', $access_token, $minutes, $path, $domain, $secure, $httpOnly);
+        $response->cookie($token_name, $access_token_value, $minutes, $path, $domain, $secure, $httpOnly);
         return $response;
 
     }
